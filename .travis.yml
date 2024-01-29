@@ -9,3 +9,15 @@ before_install:
 
 script:
   - docker run -e CI=true stephengrider/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  app: "frontend"
+  env: "Frontend-env" # not required. name of the beanstalk application you wish to manage
+  region:  "eu-north-1"
+  bucket_name: "elasticbeanstalk-eu-north-1-266872351749" # not required. The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)
+  bucket_path: "docker" 
+  on:
+    branch: main 
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"  
