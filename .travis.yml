@@ -12,8 +12,8 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  app: "docker"
-  env: "Docker-env" # not required. name of the beanstalk application you wish to manage
+  app: "docker1"
+  env: "Docker1-env" # not required. name of the beanstalk application you wish to manage
   region:  "eu-north-1"
   bucket_name: "elasticbeanstalk-eu-north-1-266872351749" # not required. The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)
   bucket_path: "docker" 
